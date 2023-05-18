@@ -8,6 +8,7 @@ class ContactsController < ApplicationController
 
   def new
     @contact = Contact.new
+    @contact["company_id"] = params["company_id"]
     # render contacts/new view with new Contact form
   end
 
@@ -25,6 +26,7 @@ class ContactsController < ApplicationController
     @contact["company_id"] = params["contact"]["company_id"]
 
     # save Contact row
+
     @contact.save
 
     # redirect user
